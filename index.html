@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#060F24">
+<meta property="og:title" content="The Sit-Down Shorts · Joseph Denny">
+<meta property="og:description" content="13 shorts from The Sit-Down interview. Tap to watch, copy captions, approve.">
+<meta property="og:image" content="shorts/01.jpg">
+<title>The Sit-Down Shorts Portal · Joseph Denny</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1A3A;--navy2:#12264F;--ink:#060F24;--aqua:#3FC1C9;--coral:#FF6F61;--gold:#E8B44A;--paper:#F4F1EA;--mute:#9AA6BF}
+*{box-sizing:border-box}html,body{margin:0;background:var(--ink);color:#fff;font-family:Montserrat,system-ui,sans-serif}
+a{color:var(--aqua)}
+header{padding:40px 28px 22px;max-width:1360px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;font-size:12px;letter-spacing:.14em;padding:5px 10px;border-radius:4px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(40px,7vw,84px);line-height:.95;margin:14px 0 10px;letter-spacing:.01em}
+h1 span{color:var(--gold)}
+.sub{color:var(--mute);font-size:15px;max-width:720px;line-height:1.5;margin:0}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px}
+.stat b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:30px;color:#fff}.stat small{color:var(--mute);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+nav{position:sticky;top:0;z-index:5;background:rgba(6,15,36,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1c2b4f}
+.navin{max-width:1360px;margin:0 auto;padding:12px 28px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tab{background:transparent;border:1px solid #2a3b63;color:#cfd6e6;font:600 13px Montserrat;padding:9px 16px;border-radius:999px;cursor:pointer}
+.tab.on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.tab .c{opacity:.6;margin-left:6px}
+.playall{margin-left:auto;background:var(--coral);border:0;color:#fff;font:800 13px Montserrat;padding:10px 18px;border-radius:999px;cursor:pointer;letter-spacing:.04em}
+main{max-width:1360px;margin:0 auto;padding:22px 28px 80px}
+.sec{margin:26px 0 8px;display:flex;align-items:baseline;gap:12px}
+.sec h2{font-family:Anton,sans-serif;font-weight:400;font-size:28px;margin:0;letter-spacing:.02em}
+.sec p{margin:0;color:var(--mute);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;margin-top:14px}
+.card{background:var(--navy);border:1px solid #1d2f58;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{position:relative;aspect-ratio:9/16;background:#000;cursor:pointer;overflow:hidden}
+.thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,transparent 55%,rgba(6,15,36,.75));transition:background .2s}
+.thumb:hover .play{background:linear-gradient(180deg,rgba(6,15,36,.15),rgba(6,15,36,.8))}
+.pbtn{width:64px;height:64px;border-radius:50%;background:rgba(232,180,74,.95);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.pbtn:after{content:"";border-left:20px solid var(--navy);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.dur{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.7);font:600 12px Montserrat;padding:3px 8px;border-radius:4px}
+.num{position:absolute;left:10px;top:10px;background:var(--navy);color:var(--gold);font:800 12px Montserrat;padding:4px 8px;border-radius:4px}
+.body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
+.ser{font:800 10.5px Montserrat;letter-spacing:.12em;color:var(--gold)}
+.ttl{font-family:Anton,sans-serif;font-weight:400;font-size:21px;line-height:1.08;letter-spacing:.01em}
+.cap{font-size:13px;line-height:1.45;color:#d6dcea;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+.cap.open{-webkit-line-clamp:unset}
+.tags{font-size:11.5px;color:var(--aqua);line-height:1.5}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.btn{background:#16295a;border:1px solid #2a3f74;color:#fff;font:600 12px Montserrat;padding:7px 11px;border-radius:7px;cursor:pointer}
+.btn:hover{border-color:var(--aqua)}
+.btn.ok{background:var(--aqua);color:var(--navy);border-color:var(--aqua)}
+.status{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mute);border-top:1px solid #1d2f58;padding-top:10px;margin-top:4px}
+.status input{accent-color:var(--aqua);width:16px;height:16px}
+.status.done{color:var(--aqua)}
+.pill{font:800 10px Montserrat;letter-spacing:.08em;padding:3px 7px;border-radius:4px;background:#2a1f12;color:var(--gold);border:1px solid #5b4422}
+.status.done .pill{background:#0f3236;color:var(--aqua);border-color:#1f6066}
+/* player */
+#player{position:fixed;inset:0;background:rgba(3,8,20,.96);z-index:20;display:none;align-items:center;justify-content:center;gap:28px;padding:24px}
+#player.on{display:flex}
+#player video{height:min(86vh,860px);aspect-ratio:9/16;max-width:92vw;background:#000;border-radius:12px}
+.pside{width:340px;max-width:40vw}
+.pside .ttl{font-size:30px;margin:6px 0 12px}
+.pside .cap{-webkit-line-clamp:unset;font-size:14px}
+.pnav{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.x{position:absolute;top:16px;right:20px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+.auto{font-size:12px;color:var(--mute);display:flex;gap:6px;align-items:center;margin-top:14px}
+.qlist{margin-top:18px;font-size:12px;color:var(--mute)}
+@media (max-width:820px){#player{flex-direction:column;gap:12px;justify-content:flex-start;padding-top:56px;overflow:auto}#player video{height:auto;width:min(92vw,420px)}.pside{width:100%;max-width:420px}.playall{margin-left:0}}
+@media (max-width:600px){header{padding:26px 16px 14px}.navin{padding:10px 16px;gap:8px}.tab{padding:8px 12px;font-size:12px}.playall{width:100%;margin-left:0;padding:12px}main{padding:12px 12px 60px}.grid{grid-template-columns:repeat(2,1fr);gap:12px}.body{padding:10px 10px 12px;gap:7px}.ttl{font-size:16px}.cap{font-size:12px;-webkit-line-clamp:2}.tags{display:none}.btn{padding:8px 9px;font-size:11px;flex:1}.status{font-size:10px}.pbtn{width:48px;height:48px}.pbtn:after{border-left-width:15px;border-top-width:9px;border-bottom-width:9px}.stats{gap:18px}.stat b{font-size:24px}footer{padding:0 16px 40px}#player video{width:100%;max-width:100%;height:auto;max-height:70vh}#player{padding:52px 12px 24px}.pside .ttl{font-size:24px}}
+footer{max-width:1360px;margin:0 auto;padding:0 28px 50px;color:var(--mute);font-size:12px;line-height:1.6}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--aqua);color:var(--navy);font:800 13px Montserrat;padding:10px 16px;border-radius:8px;opacity:0;transition:.25s;z-index:30;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+</style></head><body>
+<header>
+<span class="eyebrow">JOSEPH DENNY · REALTOR® · SHORTS PORTAL</span>
+<h1>THE SIT-DOWN <span>SHORTS</span></h1>
+<p class="sub">Every short cut from the Sit-Down interview, in one place. Tap any one to watch, copy its caption and hashtags, and tick it off once it's approved to post.</p>
+<div class="stats" id="stats"></div>
+</header>
+<nav><div class="navin" id="tabs"></div></nav>
+<main id="main"></main>
+<footer>Drafts for review. Nothing here posts on its own: approve each short before it goes out. Ticks are saved in this browser only.<br>Joseph Denny · REALTOR® · Coldwell Banker Vanguard Realty · 904-994-2399</footer>
+<div id="player"><button class="x" id="px" aria-label="Close">×</button><video id="pv" controls playsinline webkit-playsinline preload="auto"></video>
+<div class="pside"><div class="ser" id="pser"></div><div class="ttl" id="pttl"></div><div class="cap" id="pcap"></div><div class="tags" id="ptags" style="margin-top:10px"></div>
+<div class="pnav"><button class="btn" id="pprev">← Prev</button><button class="btn" id="pnext">Next →</button><button class="btn" id="pcopy">Copy caption + tags</button></div>
+<label class="auto"><input type="checkbox" id="pauto" checked> Auto-play next</label><div class="qlist" id="pq"></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const D=[{"n": "01", "title": "HOW DO PEOPLE LIKE ME AFFORD A HOUSE?", "series": "REAL ESTATE 101 · PART 1", "grp": "101", "dur": 31.8, "caption": "How do people like us afford a house right now? 🏡 Rates went up over 7% — but that doesn't mean buying is impossible. There are programs for first-time buyers, some with very little down. Let's look at what's possible for you. 📞 904-994-2399", "tags": ["#FirstTimeHomeBuyer", "#HomeBuyingTips", "#RealEstate101", "#DownPayment", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "02", "title": "RENTING = PAYING YOUR LANDLORD'S MORTGAGE", "series": "REAL ESTATE 101 · PART 2", "grp": "101", "dur": 34.1, "caption": "Renting might feel cheaper today — but look 5 to 10 years down the road. Your rent keeps climbing while a mortgage payment stays steady. Who's paying whose mortgage? 🔑 Let's run your numbers. 904-994-2399", "tags": ["#RentVsBuy", "#HomeOwnership", "#RealEstate101", "#FirstTimeHomeBuyer", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "03", "title": "WHAT DOES A 7% RATE ACTUALLY MEAN?", "series": "REAL ESTATE 101 · PART 3", "grp": "101", "dur": 42.4, "caption": "What does a 7% rate actually mean? It's the cost of borrowing — what you pay the bank for lending you the money. Back in 2020–21 rates were around 3%. Questions about your options? Give me a call. 904-994-2399", "tags": ["#MortgageRates", "#InterestRates", "#RealEstate101", "#HomeBuyingTips", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "04", "title": "MAKE $60K A YEAR? YOU CAN STILL BUY", "series": "REAL ESTATE 101 · PART 4", "grp": "101", "dur": 39.4, "caption": "Making $60K a year and wondering if you should even look? 🤔 You may not land the beach house first, but there's a lot of inventory right now — condos and single-family homes. With steady income, let's look at the numbers together. 904-994-2399", "tags": ["#FirstTimeHomeBuyer", "#AffordableHomes", "#RealEstate101", "#JacksonvilleHomes", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "05", "title": "WHAT CREDIT SCORE DO YOU NEED?", "series": "REAL ESTATE 101 · PART 5", "grp": "101", "dur": 26.8, "caption": "\"What does my credit have to be?\" Start by checking your score on one of the free credit apps to get a ballpark — then we can take a deeper dive and see what you qualify for. That's what I'm here for. 📞 904-994-2399", "tags": ["#CreditScore", "#HomeBuyingTips", "#RealEstate101", "#FirstTimeHomeBuyer", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "06", "title": "#1 MISTAKE ON A COMMERCIAL LEASE", "series": "REAL ESTATE 101 · PART 6", "grp": "101", "dur": 52.0, "caption": "Opening a shop in Jacksonville? The biggest mistake I see on commercial leases is going too short-term. A one-year lease can go a few different ways when it's up. Ideally: a longer lease with options to renew. 🏪 Let's find your space. 904-994-2399", "tags": ["#CommercialRealEstate", "#SmallBusiness", "#JacksonvilleBusiness", "#CommercialLease", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "07", "title": "THE BIGGEST LIE ABOUT BUYING A HOME", "series": "REAL ESTATE 101 · PART 7", "grp": "101", "dur": 51.2, "caption": "The biggest lie people are told about buying a home? That it's too expensive to even try. I bought my first house at 27 — buying younger gives you more time to build equity. Over the long term, owning can put you in a better spot. 904-994-2399", "tags": ["#HomeOwnership", "#BuildEquity", "#RealEstate101", "#FirstTimeHomeBuyer", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "08", "title": "DON'T JUST GO \"HOUSE SHOPPING\"", "series": "REAL ESTATE 101 · PART 8", "grp": "101", "dur": 42.8, "caption": "Buying a house isn't just going shopping tomorrow — it's coming up with the right plan. A year from now, two, three… let's set the goal and work toward it together. Right here at Jax Beach. 📞 904-994-2399 or DM me.", "tags": ["#HomeBuyingPlan", "#RealEstate101", "#FirstTimeHomeBuyer", "#HomeGoals", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "09", "title": "\"SO YOU JUST OWE MORE MONEY NOW?\"", "series": "FUNNY MOMENTS", "grp": "funny", "dur": 11.2, "caption": "\"So you just owe more money now?\" 😂 Not quite — you pay more for the bank to lend you the money. Interest rates, explained. 904-994-2399", "tags": ["#RealEstateHumor", "#MortgageRates", "#RealEstateLife", "#InterestRates", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "10", "title": "BOUGHT MY FIRST HOUSE AT 27", "series": "FUNNY MOMENTS", "grp": "funny", "dur": 14.5, "caption": "First house at 27. 💪 Be like me. 😄 #BuyYounger — let's talk about getting you started. 904-994-2399", "tags": ["#RealEstateHumor", "#FirstHome", "#BuyYounger", "#RealEstateLife", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "11", "title": "HOW JOSEPH ACCIDENTALLY BECAME A REALTOR", "series": "FUNNY MOMENTS", "grp": "funny", "dur": 28.5, "caption": "How I accidentally became a realtor 😂 My dad and I were buying and selling property, he said \"go talk to some realtors\"… and I thought, why don't I just become one? 904-994-2399", "tags": ["#RealtorLife", "#RealEstateHumor", "#MeetYourRealtor", "#RealEstateLife", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "12", "title": "MEET JOSEPH DENNY", "series": "BEHIND THE DESK", "grp": "desk", "dur": 36.1, "caption": "Who am I when I'm not selling houses? 🏄‍♂️🎣 I love to surf, fish and hunt. My family is from Jacksonville — we grew up here, and we've got a big family network that I love spending time with. Happy to help any of you guys. 904-994-2399", "tags": ["#MeetYourRealtor", "#JaxBeachLife", "#SurfLife", "#LocalRealtor", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}, {"n": "13", "title": "WHY JOSEPH LOVES REAL ESTATE", "series": "BEHIND THE DESK", "grp": "desk", "dur": 44.9, "caption": "Why I love this job: meeting new people all the time, talking real estate, and the thrill of negotiating. It's always fun when you can help somebody get a really good deal or find the right place. 🏡 904-994-2399", "tags": ["#RealtorLife", "#MeetYourRealtor", "#LocalRealtor", "#RealEstateLife", "#JosephDennyRealtor", "#ColdwellBanker", "#NortheastFlorida", "#JacksonvilleRealEstate", "#PonteVedraBeach", "#JaxBeach"], "platforms": ["Instagram Reels", "Facebook Reels", "TikTok", "YouTube Shorts"]}];
+const GROUPS=[{k:'101',name:'Real Estate 101',d:'Educational · 8 parts'},{k:'funny',name:'Funny Moments',d:'Meme cuts'},{k:'desk',name:'Behind the Desk',d:'Who Joseph is'}];
+let filter='all',queue=[],qi=0;
+const store={get(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let approved=store.get('sitdown-approved')||{};
+const fmt=s=>{s=Math.round(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1400)}
+async function copy(t,label){try{await navigator.clipboard.writeText(t);toast(label+' copied')}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');toast(label+' copied')}catch(_){toast('Select and copy manually')}a.remove()}}
+function stats(){const tot=D.reduce((a,s)=>a+s.dur,0),ap=D.filter(s=>approved[s.n]).length;
+document.getElementById('stats').innerHTML=`<div class="stat"><b>${D.length}</b><small>Shorts</small></div><div class="stat"><b>3</b><small>Series</small></div><div class="stat"><b>${fmt(tot)}</b><small>Total runtime</small></div><div class="stat"><b>${ap}/${D.length}</b><small>Approved</small></div>`}
+function tabs(){const t=[{k:'all',name:'All',c:D.length}].concat(GROUPS.map(g=>({k:g.k,name:g.name,c:D.filter(s=>s.grp==g.k).length})));
+document.getElementById('tabs').innerHTML=t.map(x=>`<button class="tab ${filter==x.k?'on':''}" data-k="${x.k}">${x.name}<span class="c">${x.c}</span></button>`).join('')+'<button class="playall" id="pa">▶ PLAY ALL</button>';
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{filter=b.dataset.k;render()});document.getElementById('pa').onclick=()=>openP(visible(),0)}
+const visible=()=>D.filter(s=>filter=='all'||s.grp==filter);
+function card(s){return `<div class="card" id="s${s.n}"><div class="thumb" data-n="${s.n}"><img src="shorts/${s.n}.jpg" alt="${esc(s.title)}" loading="lazy"><div class="play"><div class="pbtn"></div></div><span class="num">#${s.n}</span><span class="dur">${fmt(s.dur)}</span></div>
+<div class="body"><div class="ser">${esc(s.series)}</div><div class="ttl">${esc(s.title)}</div><div class="cap" title="Tap to expand">${esc(s.caption)}</div><div class="tags">${esc(s.tags.join(' '))}</div>
+<div class="row"><button class="btn" data-c="cap" data-n="${s.n}">Copy caption</button><button class="btn" data-c="tags" data-n="${s.n}">Copy hashtags</button></div>
+<label class="status ${approved[s.n]?'done':''}"><input type="checkbox" data-a="${s.n}" ${approved[s.n]?'checked':''}><span class="pill">${approved[s.n]?'APPROVED':'NEEDS REVIEW'}</span>${esc(s.platforms.join(' · '))}</label></div></div>`}
+function render(){tabs();stats();const m=document.getElementById('main');const gs=filter=='all'?GROUPS:GROUPS.filter(g=>g.k==filter);
+m.innerHTML=gs.map(g=>`<div class="sec"><h2>${g.name}</h2><p>${g.d}</p></div><div class="grid">${D.filter(s=>s.grp==g.k).map(card).join('')}</div>`).join('');
+m.querySelectorAll('.thumb').forEach(t=>t.onclick=()=>{const v=visible();openP(v,v.findIndex(s=>s.n==t.dataset.n))});
+m.querySelectorAll('.cap').forEach(c=>c.onclick=()=>c.classList.toggle('open'));
+m.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const s=D.find(x=>x.n==b.dataset.n);b.dataset.c=='cap'?copy(s.caption,'Caption'):copy(s.tags.join(' '),'Hashtags')});
+m.querySelectorAll('[data-a]').forEach(i=>i.onchange=()=>{approved[i.dataset.a]=i.checked;if(!i.checked)delete approved[i.dataset.a];store.set('sitdown-approved',approved);render()})}
+const P=document.getElementById('player'),V=document.getElementById('pv');
+function openP(list,i){queue=list;qi=Math.max(0,i);P.classList.add('on');load(true)}
+function load(play){const s=queue[qi];V.src='shorts/'+s.n+'.mp4';V.poster='shorts/'+s.n+'.jpg';
+document.getElementById('pser').textContent=s.series;document.getElementById('pttl').textContent=s.title;document.getElementById('pcap').textContent=s.caption;document.getElementById('ptags').textContent=s.tags.join(' ');
+document.getElementById('pq').textContent=(qi+1)+' of '+queue.length+(qi+1<queue.length?' · up next: '+queue[qi+1].title:'');
+if(play){const p=V.play();if(p&&p.catch)p.catch(()=>{})}}
+function step(d){if(!queue.length)return;qi=(qi+d+queue.length)%queue.length;load(true)}
+function closeP(){V.pause();V.removeAttribute('src');V.load();P.classList.remove('on')}
+document.getElementById('px').onclick=closeP;document.getElementById('pprev').onclick=()=>step(-1);document.getElementById('pnext').onclick=()=>step(1);
+document.getElementById('pcopy').onclick=()=>{const s=queue[qi];copy(s.caption+'\n\n'+s.tags.join(' '),'Caption + tags')};
+V.onended=()=>{if(document.getElementById('pauto').checked&&qi+1<queue.length)step(1)};
+P.onclick=e=>{if(e.target===P)closeP()};
+document.addEventListener('keydown',e=>{if(!P.classList.contains('on'))return;if(e.key=='Escape')closeP();if(e.key=='ArrowRight')step(1);if(e.key=='ArrowLeft')step(-1)});
+render();
+</script></body></html>
