@@ -74,12 +74,12 @@ footer{max-width:1360px;margin:0 auto;padding:0 28px 50px;color:var(--mute);font
 <header>
 <span class="eyebrow">JOSEPH DENNY · REALTOR® · SHORTS PORTAL</span>
 <h1>THE SIT-DOWN <span>SHORTS</span></h1>
-<p class="sub">Every short cut from the Sit-Down interview, in one place. Tap any one to watch, copy its caption and hashtags, and tick it off once it's approved to post.</p>
+<p class="sub">Every short cut from the Sit-Down interview, in one place. Tap any one to watch, copy its caption and hashtags, and tick Approved on the ones you want posted. Skyrey gets your approvals automatically.</p>
 <div class="stats" id="stats"></div>
 </header>
 <nav><div class="navin" id="tabs"></div></nav>
 <main id="main"></main>
-<footer>Drafts for review. Nothing here posts on its own: approve each short before it goes out. Ticks are saved in this browser only.<br>Joseph Denny · REALTOR® · Coldwell Banker Vanguard Realty · 904-994-2399</footer>
+<footer>Drafts for review. Nothing here posts on its own. When you tick Approved, it goes straight to Skyrey.<br>Joseph Denny · REALTOR® · Coldwell Banker Vanguard Realty · 904-994-2399</footer>
 <div id="player"><button class="x" id="px" aria-label="Close">×</button><video id="pv" controls playsinline webkit-playsinline preload="auto"></video>
 <div class="pside"><div class="ser" id="pser"></div><div class="ttl" id="pttl"></div><div class="cap" id="pcap"></div><div class="tags" id="ptags" style="margin-top:10px"></div>
 <div class="pnav"><button class="btn" id="pprev">← Prev</button><button class="btn" id="pnext">Next →</button><button class="btn" id="pcopy">Copy caption + tags</button></div>
@@ -91,6 +91,11 @@ const GROUPS=[{k:'101',name:'Real Estate 101',d:'Educational · 8 parts'},{k:'fu
 let filter='all',queue=[],qi=0;
 const store={get(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let approved=store.get('sitdown-approved')||{};
+const FORM='https://docs.google.com/forms/d/e/1FAIpQLSck5SBx6Z3TljAF47iTZSQQE1-HSnz5CT2fDDpIV7O-JzWzmQ/formResponse';
+let synced=store.get('sitdown-synced')||{};
+function sendStatus(n,ok){const s=D.find(x=>x.n==n);const b=new URLSearchParams();b.append('entry.1240601257','#'+n);b.append('entry.1075114535',ok?'APPROVED':'UN-APPROVED');b.append('entry.1145094301',s?s.title:'');
+fetch(FORM,{method:'POST',mode:'no-cors',body:b}).then(()=>{synced[n]=ok;store.set('sitdown-synced',synced)}).catch(()=>{})}
+function syncPending(){D.forEach(s=>{const ok=!!approved[s.n];if(ok&&synced[s.n]!==true)sendStatus(s.n,true)})}
 const fmt=s=>{s=Math.round(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1400)}
@@ -110,7 +115,7 @@ m.innerHTML=gs.map(g=>`<div class="sec"><h2>${g.name}</h2><p>${g.d}</p></div><di
 m.querySelectorAll('.thumb').forEach(t=>t.onclick=()=>{const v=visible();openP(v,v.findIndex(s=>s.n==t.dataset.n))});
 m.querySelectorAll('.cap').forEach(c=>c.onclick=()=>c.classList.toggle('open'));
 m.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const s=D.find(x=>x.n==b.dataset.n);b.dataset.c=='cap'?copy(s.caption,'Caption'):copy(s.tags.join(' '),'Hashtags')});
-m.querySelectorAll('[data-a]').forEach(i=>i.onchange=()=>{approved[i.dataset.a]=i.checked;if(!i.checked)delete approved[i.dataset.a];store.set('sitdown-approved',approved);render()})}
+m.querySelectorAll('[data-a]').forEach(i=>i.onchange=()=>{const n=i.dataset.a;approved[n]=i.checked;if(!i.checked)delete approved[n];store.set('sitdown-approved',approved);sendStatus(n,i.checked);toast(i.checked?'Approved — sent to Skyrey':'Un-approved — Skyrey notified');render()})}
 const P=document.getElementById('player'),V=document.getElementById('pv');
 function openP(list,i){queue=list;qi=Math.max(0,i);P.classList.add('on');load(true)}
 function load(play){const s=queue[qi];V.src='shorts/'+s.n+'.mp4';V.poster='shorts/'+s.n+'.jpg';
@@ -124,5 +129,5 @@ document.getElementById('pcopy').onclick=()=>{const s=queue[qi];copy(s.caption+'
 V.onended=()=>{if(document.getElementById('pauto').checked&&qi+1<queue.length)step(1)};
 P.onclick=e=>{if(e.target===P)closeP()};
 document.addEventListener('keydown',e=>{if(!P.classList.contains('on'))return;if(e.key=='Escape')closeP();if(e.key=='ArrowRight')step(1);if(e.key=='ArrowLeft')step(-1)});
-render();
+render();syncPending();
 </script></body></html>
